@@ -1,0 +1,36 @@
+<%-include('../partials/header.html')%>
+<%-include('partials/navigation.html')%>   
+
+    <!-- login -->
+    <section class="login">
+        <div class="container mt-5 mb-5">
+            <% if(msg.length) { %>
+                <%  for(i=0 ;i<msg.length;i++){%>
+                <h3 style="color: #17b978;" class="text-center"><%=msg[i]%></h3><br>
+                <%   }%>
+                <%   } %>
+                <% if(err.length) { %>
+                    <%  for(i=0 ;i<err.length;i++){%>
+                    <h3 style="color: #ff304f;" class="text-center"><%=err[i]%></h3><br>
+                    <%   } %>
+                    <%   } %>
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center position">
+                    <form action="/login" method="POST">
+                    <label>Email Address</label>
+                    <input type="text" name="mail" class="form-control" placeholder="Email" required>
+                    <label>Password</label>
+                    <input type="password" name="pass" class="form-control" placeholder="Password" required>
+                    <p><input type="checkbox"> Remember Password</p>
+                    <input type="submit" value="Login" class="btn btn-info btn-lg">
+                </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- ================ contact section end ================= -->
+
+<%-include('../partials/footer.html')%>
+<%-include('partials/footer.html')%>

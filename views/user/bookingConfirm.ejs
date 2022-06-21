@@ -1,0 +1,37 @@
+<%-include('../partials/header.html')%>
+<%-include('partials/navigation.html')%>
+  <main>
+            <div class="container">
+               <div class="row ">
+                <div class="col-12 mt-5">
+                   <form action="/status" method="post">
+
+                  <h2 class="text-center text-primary">Category: <%=name%></h2>
+                  <h2 class="text-center text-success">Type: <%=type%></h2>
+                  <h2 class="text-center text-info"> Cost: <%=cost%></h2>
+                </div>
+                <div class="col-lg-4 col-md-12 col-md-12 position">
+                   <input type="hidden" name="name" value="<%=name%>">
+                   <input type="hidden" name="type" value="<%=type%>">
+                   <input type="hidden" name="cost" value="<%=cost%>">
+
+                        <div class="booking-title text-center mt-3 mb-3">
+                            <span> Booking Date:</span>
+                            <input type="date" name="date" class="form-control text-center" required />
+                        </div>
+
+                        <div class="booking-title text-center mt-3 mb-3">
+                            <span> Number of Persons: </span>
+                            <input name="amt_of_prsn"  type="number" class="form-control" placeholder="0" required />
+                        </div>
+                </div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+  <input type="submit" class="btn btn-info mt-3 mb-5 positionbtn" value="Confirm Booking" >
+</div>
+               </form>
+             </div>
+            </div>
+        <!-- Booking End-->
+  </main>
+<%-include('../partials/footer.html')%>
+<%-include('partials/footer.html')%>

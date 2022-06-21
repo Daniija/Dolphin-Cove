@@ -1,0 +1,38 @@
+<%-include('../partials/header.html')%>
+<%-include('partials/navigation.html')%>  
+
+    <!-- login -->
+    <section class="login">
+        <div class="container mt-5 mb-5">
+            <% if(err.length) { %>
+            <%  for(i=0 ;i<err.length;i++){%>
+            <h3 style="color: #ff304f;" class="text-center"><%=err[i]%></h3><br>
+            <%   }%>
+            <%   } %>
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6 col-sm-12 text-center position mb-48">
+                    <form action="/createaccount" method="POST">
+                        <label>User Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="User Name" required>
+                        <label>Email Address</label>
+                        <input type="text" name="mail" class="form-control" placeholder="Email Address" required>
+                        <label>Phone number</label>
+                        <input type="text" name="phone" class="form-control" placeholder="Phone number" required>
+                        <label>Password</label>
+                        <input type="password" name="pass" class="form-control" placeholder="password" required>
+                        <label>Re-enter Password</label>
+                        <input type="password" name="con_pass" class="form-control" placeholder="password" required>
+
+                        <input type="submit" value="Create Account" class="btn btn-info btn-lg mt-3">
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <!-- ================ contact section end ================= -->
+
+<%-include('../partials/footer.html')%>
+<%-include('partials/footer.html')%>
